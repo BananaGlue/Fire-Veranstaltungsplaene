@@ -110,3 +110,37 @@ Im folgenden werden die zu verwendenden Füllfarben und Symbole der definierten 
 | Aufbauten | `Gefahren == 'Gas'` | DIN 14095 `P617` |
 
 
+> [!TIP]
+> ✅ **Good example**
+> ```python
+> def add(a, b):
+>     return a + b
+> ```
+
+> [!WARNING]
+> ❌ **Bad example**
+> ```python
+> def add(a, b):
+>     return a+b  # missing spaces
+> ```
+
+> [!NOTE]
+> ❌ **note example**
+> ```python
+> def add(a, b):
+>     return a+b  # missing spaces
+> ```
+
+> [!IMPORTANT]
+> ❌ **important example**
+> ```python
+> def add(a, b):
+>     return a+b  # missing spaces
+> ```
+
+> [!CAUTION]
+> ❌ **caution example**
+> ```python
+> def add(a, b):
+>     return a+b  # missing spaces
+> ```
