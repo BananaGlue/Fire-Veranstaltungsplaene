@@ -87,7 +87,7 @@ Im folgenden werden die zu verwendenden Linienfarben, Dashpattern und Füllfarbe
 
 | Typ | Linienfarbe (hex) | Dashpattern | Füllfarbe (hex) |
 | --- | ----------- | ----------- | ----------- | 
-| Fläche Rot | #000000AA | `-` | #FF000066 | 
+| Fläche Rot | `#000000AA` | `-` | `#FF000066` | 
 | Fläche Gelb | #000000AA | `-` | #FFFF0066 | 
 | Fläche Grün | #000000AA | `-` | #00FF0066 |
 | Fläche Blau | #000000AA | `-` | #00aaff66 |
