@@ -1,6 +1,9 @@
 # Georeferenzierte Veranstaltungspläne
 
+![Veranstaltungspläne](IMG_0356.png)
+
 [Details](Veranstaltungspläne.md)
+
 
 > [!TIP]
 > ✅ **Good example**
