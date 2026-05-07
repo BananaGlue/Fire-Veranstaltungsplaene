@@ -1,6 +1,6 @@
 # Georeferenzierte Veranstaltungspläne
 
-![Veranstaltungspläne](/Bilder/IMG_0356.png)
+![Veranstaltungspläne](/Bilder/IMG_0356.PNG)
 
 [Details](Veranstaltungspläne.md)
 
