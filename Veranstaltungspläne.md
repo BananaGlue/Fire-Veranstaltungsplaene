@@ -30,7 +30,7 @@ Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedacht
 | Typ | Angedachte Verwendung | Beispiel |
 | --- | ----------- | ----------- | 
 | Hinweis | Darstellung von Texthinweisen. | Ab hier keine Wendemöglichkeit mehr. |
-| Punkt [Rot\|Gelb\|Grün\|Blau\|Lila] [1-50]|[A-Z] | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | Punkt Rot 13 |
+| Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]|[A-Z]) | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | Punkt Rot 13 |
 | Bereitstellungsraum | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-Z1 |
 | Bereitstellungszone | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-3 |
 | Einsatzleitung | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | EL FW |
@@ -53,10 +53,10 @@ Im folgenden werden die Ausprägungen der einzelnen Polygontypen und deren gedac
 
 | Typ | Angedachte Verwendung | Beispiel |
 | --- | ----------- | ----------- | 
-| Fläche [Rot\|Gelb\|Grün\|Blau\|Lila] | Darstellung von Veranstaltungsflächen. | Aufteilung der Veranstaltungsfläche in unterschiedliche Bereiche / Zuständigkeiten. |
+| Fläche (Rot\|Gelb\|Grün\|Blau\|Lila) | Darstellung von Veranstaltungsflächen. | Aufteilung der Veranstaltungsfläche in unterschiedliche Bereiche / Zuständigkeiten. |
 | Aufbauten | Darstellung von Veranstaltungsaufbauten. | Hütten / Stände oder ähnliches. |
 | Aufstellfläche | Vordefinierte Aufstellflächen für die Feuerwehr. | Aufstellfläche nach DIN 14095.Bereitstellungszonen oder Behandlungsplätze. |
-| [Feste\|Mobile\|Teilmobile] Sperre | Sperren im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. |
+| (Feste\|Mobile\|Teilmobile) Sperre | Sperren im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. |
 | Indutainer | Sperre im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. |
 | Zugang | Zugang zu einem Gebäude. | Zugang nach DIN 14095. |
 | Zufahrt | Zufahrt zu der Veranstaltung. | Zufahrt nach DIN 14095. |
@@ -72,11 +72,11 @@ Im folgenden werden die zu verwendenden Füllfarben und Symbole der einzelnen Pu
 | Typ | Füllfarbe (hex) | Symbol |
 | --- | ----------- | ----------- | 
 | Hinweis | #333333EE | `circle.fill` |
-| Punkt Rot [1-50]\|[A-Z] | #FF0000AA | `[1-50]|[A-Z].circle.fill` |
-| Punkt Gelb [1-50]\|[A-Z] | #FFFF00AA | `[1-50]|[A-Z].circle.fill` |
-| Punkt Grün [1-50]\|[A-Z] | #00FF00AA | `[1-50]|[A-Z].circle.fill` |
-| Punkt Blau [1-50]\|[A-Z] | #00aaffAA | `[1-50]|[A-Z].circle.fill` |
-| Punkt Lila [1-50]\|[A-Z] | #eb34b1AA | `[1-50]|[A-Z].circle.fill` |
+| Punkt Rot ([1-50]\|[A-Z]) | #FF0000AA | `[1-50]|[A-Z].circle.fill` |
+| Punkt Gelb ([1-50]\|[A-Z]) | #FFFF00AA | `[1-50]|[A-Z].circle.fill` |
+| Punkt Grün ([1-50]\|[A-Z]) | #00FF00AA | `[1-50]|[A-Z].circle.fill` |
+| Punkt Blau ([1-50]\|[A-Z]) | #00aaffAA | `[1-50]|[A-Z].circle.fill` |
+| Punkt Lila ([1-50]\|[A-Z]) | #eb34b1AA | `[1-50]|[A-Z].circle.fill` |
 
 #### Linientypen
 
