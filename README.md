@@ -43,6 +43,6 @@
 
 | Light mode | Dark mode | Dark mode |
 |------------|-----------|-----------|
-| ![](Bilder/Punkt_Blau_2.png.png) | ![](Bilder/Punkt_Gelb_3.png.png) | ![](Bilder/Punkt_Rot_X.png.png) |
+| ![](Bilder/Punkt_Blau_2.png) | ![](Bilder/Punkt_Gelb_3.png) | ![](Bilder/Punkt_Rot_X.png) |
 
 
