@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Info": "nur titel, kein icon",
+        "Typ": "Punkt Grün 1",
+        "Titel": "765",
+        "Gefahren": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.275810167237665,
+          51.45752479113506
+        ]
+      }
+    }
+  ]
+}

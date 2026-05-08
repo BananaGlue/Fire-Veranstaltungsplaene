@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Info": "nur titel, kein icon",
+        "Typ": "Richtungspfeil",
+        "Titel": "765",
+        "Gefahren": null
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.2732166914345555,
+            51.45634537956701
+          ],
+          [
+            7.273411650288068,
+            51.45671656986582
+          ],
+          [
+            7.273617440189355,
+            51.45709450597795
+          ]
+        ]
+      }
+    }
+  ]
+}

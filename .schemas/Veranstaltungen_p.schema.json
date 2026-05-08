@@ -38,19 +38,33 @@
               "Typ": {
                 "description": "Definiert den Typ des Features, notwendig für die Darstellungskonfiguration (Style).",
                 "type": "string",
-                "enum": [
-                  "Hinweis",
-                  "Punkt Rot",
-                  "Punkt Gelb",
-                  "Punkt Grün",
-                  "Punkt Blau",
-                  "Punkt Lila",
-                  "Bereitstellungsraum",
-                  "Bereitstellungszone",
-                  "Einsatzleitung",
-                  "Befehlsstelle",
-                  "Drohnengruppe",
-                  "Behandlungsplatz"
+                "oneOf": [
+                  { 
+                    "enum": [
+                      "Hinweis",
+                      "Bereitstellungsraum",
+                      "Bereitstellungszone",
+                      "Einsatzleitung",
+                      "Befehlsstelle",
+                      "Drohnengruppe",
+                      "Behandlungsplatz"
+                    ] 
+                  },
+                  { 
+                    "pattern": "^Punkt Rot ([1-9]|[1-4][0-9]|50|[A-Z])$" 
+                  },
+                  { 
+                    "pattern": "^Punkt Gelb ([1-9]|[1-4][0-9]|50|[A-Z])$" 
+                  },
+                  { 
+                    "pattern": "^Punkt Grün ([1-9]|[1-4][0-9]|50|[A-Z])$" 
+                  },
+                  { 
+                    "pattern": "^Punkt Blau ([1-9]|[1-4][0-9]|50|[A-Z])$" 
+                  },
+                  { 
+                    "pattern": "^Punkt Lila ([1-9]|[1-4][0-9]|50|[A-Z])$" 
+                  }
                 ]
               },
               "Titel": {
