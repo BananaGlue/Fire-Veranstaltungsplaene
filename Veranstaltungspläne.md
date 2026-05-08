@@ -12,7 +12,15 @@ Je eine GeoJSON Datei als FeatureCollection mit WGS84 als Koordinatenprojektion:
 
 Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. Polygon als auch MultiPolygon).
 
-Für das Datenmodell existiert ein json.schema.
+Alle drei Ebenen haben dasselbe Grunddatenmodell: `Typ`, `Titel`, `Info` und `Gefahren`. Typ bestimmt die Darstellung in den anzeigenden Anwendungen. `Titel` ist ein optionaler auf der Karte angezeigter Text, `Info` und `Gefahren` sind Texte, die in einer Detailansicht angezeigt werden.
+
+`Typ` MUSS vorhanden sein, `Titel`, `Info` und `Gefahren` sind optional (können weggelassen werden) oder können `null` zugewiesen bekommen.
+
+Für die drei Ebenen existiert jeweils auch ein json.schema:
+
+- [Punktebene Schema](.schemas/Veranstaltungen_p.schema.json)
+- [Linienebene Schema](.schemas/Veranstaltungen_p.schema.json)
+- [Polygonebene Schema](.schemas/Veranstaltungen_p.schema.json)
 
 #### GeoJSON Properties:
 
