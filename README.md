@@ -10,25 +10,13 @@ Das Datenmodell besteht aus vorgegebenen GeoJSON-Properties und einer Style-Vorl
 
 Je eine GeoJSON Datei als FeatureCollection mit WGS84 als Koordinatenprojektion:
 
-- Punktebene:   Veranstaltungen_p.geojson
-- Linienebene:  Veranstaltungen_l.geojson
-- Polygonebene: Veranstaltungen_f.geojson
+- Punktebene: `Veranstaltungen_p.geojson`
+- Linienebene: `Veranstaltungen_l.geojson`
+- Polygonebene: `Veranstaltungen_f.geojson`
 
-Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `Point`, als auch `MultiPoint`, `LineString` als auch `MultiLineString`, `Polygon` als auch `MultiPolygon`).
+Die Dateien sind entsprechend zu benennen.
 
-Alle drei Ebenen haben dasselbe Grunddatenmodell der GeoJSON-Properties: `Typ`, `Titel`, `Info` und `Gefahren`. 
-
-`Typ` bestimmt die Darstellung in den anzeigenden Anwendungen. `Titel` ist ein optionaler auf der Karte angezeigter Text, `Info` und `Gefahren` sind Texte, die in einer Detailansicht angezeigt werden.
-
-`Typ` MUSS vorhanden sein, `Titel`, `Info` und `Gefahren` sind optional (können weggelassen werden) oder können `null` zugewiesen bekommen.
-
-Für die drei Ebenen existiert jeweils auch ein json.schema:
-
-- [Punktebene Schema](.schemas/Veranstaltungen_p.schema.json)
-- [Linienebene Schema](.schemas/Veranstaltungen_p.schema.json)
-- [Polygonebene Schema](.schemas/Veranstaltungen_p.schema.json)
-
-#### GeoJSON Properties:
+### GeoJSON Feature Properties:
 
 | Name | Beschreibung | Verpflichtend? |
 | --- | ----------- | ----------- |
@@ -37,14 +25,14 @@ Für die drei Ebenen existiert jeweils auch ein json.schema:
 | Info | Optionale Hinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
 | Gefahren | Optionale Gefahrenhinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
 
-#### Punkttypen
+### Punkttypen
 
 Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedachter Anwendungszweck definiert:
 
 | Typ | Angedachte Verwendung | Beispiel | Vorschau |
 | --- | ----------- | ----------- |  ----------- |
 | Hinweis | Darstellung von Texthinweisen. | Ab hier keine Wendemöglichkeit mehr. | ![](Bilder/Punkt_Blau_2.png) |
-| Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]|[A-Z]) | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | Punkt Rot 13 | ![](Bilder/Punkt_Blau_2.png) |
+| Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z]) | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | Punkt Rot 13 | ![](Bilder/Punkt_Blau_2.png) |
 | Bereitstellungsraum | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-Z1 | ![](Bilder/Punkt_Blau_2.png) |
 | Bereitstellungszone | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-3 | ![](Bilder/Punkt_Blau_2.png) |
 | Einsatzleitung | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | EL FW | ![](Bilder/Punkt_Blau_2.png) |
@@ -52,7 +40,95 @@ Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedacht
 | Drohnengruppe | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | Drohnengruppe | ![](Bilder/Punkt_Blau_2.png) |
 | Behandlungsplatz | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BHP-1 | ![](Bilder/Punkt_Blau_2.png) |
 
-#### Linientypen
+Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `Point`, als auch `MultiPoint`).
+
+#### Beispiele
+
+`Typ` MUSS vorhanden sein, `Titel`, `Info` und `Gefahren` sind optional (können weggelassen werden) oder können `null` zugewiesen bekommen.
+
+> [!TIP]
+> **Beispiel: nur Typ**
+> ```json
+> {
+>   "type": "Feature",
+>   "properties": {
+>     "Typ": "Aufbauten"
+>   },
+>   "geometry": {...}
+> }
+> ```
+
+> [!TIP]
+> **Beispiel: Titel, Info und Gefahren mit Textzuweisung**
+> ```json
+> {
+>   "type": "Feature",
+>   "properties": {
+>     "Typ": "Aufbauten",
+>     "Titel": "Stand 27",
+>     "Info": "Bratmax",
+>     "Gefahren": "Gas"
+>   },
+>   "geometry": {...}
+> }
+> ```
+
+> [!TIP]
+> **Beispiel: Titel, Info und Gefahren mit null Zuweisung**
+> ```json
+> {
+>   "type": "Feature",
+>   "properties": {
+>     "Typ": "Aufbauten",
+>     "Titel": null,
+>     "Info": null,
+>     "Gefahren": null
+>   },
+>   "geometry": {...}
+> }
+> ```
+
+#### Fehlervermeidung
+
+Es ist darauf zu achten, dass die Typen exakt wie angegeben definiert sind. Zusätzliche Leerzeichen oder abweichende Kleinschreibung führt zu fehlerhafter Darstellung.
+
+> [!CAUTION]
+> ❌ **Negativbeispiel: Leerzeichen am Ende**
+> ```json
+> {
+>   "type": "Feature",
+>   "properties": {
+>     "Typ": "Punkt Gelb X "
+>   },
+>   "geometry": {...}
+> }
+> ```
+
+> [!CAUTION]
+> ❌ **Negativbeispiel: mehr als ein Leerzeichen zwischen den Textbausteinen**
+> ```json
+> {
+>   "type": "Feature",
+>   "properties": {
+>     "Typ": "Punkt Gelb  X"
+>   },
+>   "geometry": {...}
+> }
+> ```
+
+> [!CAUTION]
+> ❌ **Negativbeispiel: abweichende Kleinschreibung zu Vorgabe**
+> ```json
+> {
+>   "type": "Feature",
+>   "properties": {
+>     "Typ": "Punkt gelb x"
+>   },
+>   "geometry": {...}
+> }
+> ```
+
+### Linientypen
 
 Im folgenden werden die Ausprägungen der einzelnen Linientypen und deren gedachter Anwendungszweck definiert:
 
@@ -61,7 +137,11 @@ Im folgenden werden die Ausprägungen der einzelnen Linientypen und deren gedach
 | Richtungspfeil | Darstellung von Bewegungsrichtungen. | Stellt die Verlaufsrichtung eines Veranstaltungszuges dar. | ![](Bilder/Punkt_Blau_2.png) |
 | Zaunanlage | Darstellung von Zäunen. | Stellt einen Zaun dar. Sollte in Kombination mit Zugang oder Zufahrt verwendet werden um Zugangsmöglichkeiten darzustellen. | ![](Bilder/Punkt_Blau_2.png) |
 
-#### Polygontypen
+
+
+Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `LineString` als auch `MultiLineString`).
+
+### Polygontypen
 
 Im folgenden werden die Ausprägungen der einzelnen Polygontypen und deren gedachter Anwendungszweck definiert:
 
@@ -75,13 +155,24 @@ Im folgenden werden die Ausprägungen der einzelnen Polygontypen und deren gedac
 | Zugang | Zugang zu einem Gebäude. | Zugang nach DIN 14095. | ![](Bilder/Punkt_Blau_2.png) |
 | Zufahrt | Zufahrt zu der Veranstaltung. | Zufahrt nach DIN 14095. | ![](Bilder/Punkt_Blau_2.png) |
 
+
+Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `Polygon` als auch `MultiPolygon`).
+
+### JSON schema
+
+Für die drei Ebenen existiert jeweils auch ein json.schema:
+
+- [Punktebene Schema](.schemas/Veranstaltungen_p.schema.json)
+- [Linienebene Schema](.schemas/Veranstaltungen_p.schema.json)
+- [Polygonebene Schema](.schemas/Veranstaltungen_p.schema.json)
+
 ## Stylemodell
 
 Die Darstellung der Daten ist applikationsspezifisch umzusetzen. 
 
 #### Punkttypen
 
-Im folgenden werden die zu verwendenden Füllfarben und Symbole der einzelnen Punkttypen definiert, die Symbole verweisen exemplarisch auf `Apple SF Symbols`:
+Im folgenden werden die zu verwendenden Füllfarben und Symbole der einzelnen Punkttypen definiert, die Symbole verweisen exemplarisch auf `Apple SF Symbols` (applikationsspezifisch):
 
 | Typ | Füllfarbe (hex) | Symbol |
 | --- | ----------- | ----------- | 
@@ -123,100 +214,12 @@ Im folgenden werden die zu verwendenden Linienfarben, Dashpattern und Füllfarbe
 
 #### Hilfspunkttypen
 
-Im folgenden werden die zu verwendenden Füllfarben und Symbole der definierten Spezialfälle in Form von Hilfspunkttypen definiert, die Symbole verweisen exemplarisch auf `Apple SF Symbols` oder auf die DIN 14095:
+Im folgenden werden die zu verwendenden Füllfarben und Symbole der definierten Spezialfälle in Form von Hilfspunkttypen definiert, die Symbole verweisen exemplarisch auf `Apple SF Symbols` (applikationsspezifisch) oder auf die DIN 14095:
 
 | Typ | Spezialfall | Symbol |
 | --- | ----------- | ----------- | 
 | Aufbauten (Polygon) | `Gefahren == 'Gas'` | DIN 14095 `P617` |
 
-
-## Beispiele
-
-Alle drei Ebenen haben dasselbe Grunddatenmodell: `Typ`, `Titel`, `Info` und `Gefahren`. Typ bestimmt die Darstellung in den anzeigenden Anwendungen. `Titel` ist ein optionaler auf der Karte angezeigter Text, `Info` und `Gefahren` sind Texte, die in einer Detailansicht angezeigt werden.
-
-`Typ` MUSS vorhanden sein, `Titel`, `Info` und `Gefahren` sind optional (können weggelassen werden) oder können `null` zugewiesen bekommen.
-
-> [!TIP]
-> **Beispiel 1**
-> ```json
-> {
->   "type": "Feature",
->   "properties": {
->     "Typ": "Aufbauten"
->   },
->   "geometry": {...}
-> }
-> ```
-
-> [!TIP]
-> **Beispiel 2**
-> ```json
-> {
->   "type": "Feature",
->   "properties": {
->     "Typ": "Aufbauten",
->     "Titel": "Stand 27",
->     "Info": "Bratmax",
->     "Gefahren": "Gas"
->   },
->   "geometry": {...}
-> }
-> ```
-
-> [!TIP]
-> **Beispiel 2**
-> ```json
-> {
->   "type": "Feature",
->   "properties": {
->     "Typ": "Aufbauten",
->     "Titel": null,
->     "Info": null,
->     "Gefahren": null
->   },
->   "geometry": {...}
-> }
-> ```
-
-### Fehlervermeidung
-
-Es ist darauf zu achten, dass die Typen exakt wie angegeben definiert sind. Zusätzliche Leerzeichen oder abweichende Kleinschreibung führt zu fehlerhafter Darstellung.
-
-> [!CAUTION]
-> ❌ **Negativbeispiel: Leerzeichen am Ende**
-> ```json
-> {
->   "type": "Feature",
->   "properties": {
->     "Typ": "Punkt Gelb X "
->   },
->   "geometry": {...}
-> }
-> ```
-
-> [!CAUTION]
-> ❌ **Negativbeispiel: mehr als ein Leerzeichen zwischen den Textbausteinen**
-> ```json
-> {
->   "type": "Feature",
->   "properties": {
->     "Typ": "Punkt Gelb  X"
->   },
->   "geometry": {...}
-> }
-> ```
-
-> [!CAUTION]
-> ❌ **Negativbeispiel: abweichende Kleinschreibung zu Vorgabe**
-> ```json
-> {
->   "type": "Feature",
->   "properties": {
->     "Typ": "Punkt gelb x"
->   },
->   "geometry": {...}
-> }
-> ```
 
 ### Punkttypen
 
