@@ -40,30 +40,7 @@
 >     return a+b  # missing spaces
 > ```
 
-```geojson
-{
-  "type": "FeatureCollection",
-  "features": [
-    { 
-      "type": "Feature",
-      "properties": {
-        "title": "My favorite spot",
-        "description": "Best coffee in town",
-        "marker-color": "#ff0000",
-        "marker-size": "large",
-        "stroke": "#0000ff",
-        "stroke-width": 3,
-        "fill": "#00ff00",
-        "fill-opacity": 0.4
-      },
-      "geometry": {
-          "type": "Point",
-          "coordinates": [
-            7.271547105819079,
-            51.459387421814569
-          ]
-      }
-    }
-  ]
-}
-```
+
+| Light mode | Dark mode |
+|------------|-----------|
+| ![](light.png) | ![](dark.png) |

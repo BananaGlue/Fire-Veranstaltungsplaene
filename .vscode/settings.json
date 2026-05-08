@@ -1,0 +1,22 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/*Veranstaltungen_p.geojson"
+      ],
+      "url": ".schemas/Veranstaltungen_p.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/*Veranstaltungen_l.geojson"
+      ],
+      "url": ".schemas/Veranstaltungen_l.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/*Veranstaltungen_f.geojson"
+      ],
+      "url": ".schemas/Veranstaltungen_f.schema.json"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fireapp.io/Veranstaltung_f.schema.json",
+  "title": "Georeferenzierte Veranstaltungspläne Linien",
+  "description": "Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedachter Anwendungszweck definiert.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "FeatureCollection"
+      ]
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "Feature"
+            ]
+          },
+          "geometry": {
+            "oneOf": [
+              {
+                "$ref": "GeoJSON.schema.json#/$defs/Polygon"
+              },
+              {
+                "$ref": "GeoJSON.schema.json#/$defs/MultiPolygon"
+              }
+            ]
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "Typ": {
+                "description": "Definiert den Typ des Features, notwendig für die Darstellungskonfiguration (Style).",
+                "type": "string",
+                "enum": [
+                  "Fläche Rot",
+                  "Fläche Gelb",
+                  "Fläche Grün",
+                  "Fläche Blau",
+                  "Fläche Lila",
+                  "Aufbauten",
+                  "Aufstellfläche",
+                  "Feste Sperre",
+                  "Mobile Sperre",
+                  "Teilmobile Sperre",
+                  "Indutainer",
+                  "Zugang",
+                  "Zufahrt"
+                ]
+              },
+              "Titel": {
+                "description": "Optionaler Titel, der in der Karte unter eines Punkt, entlang einer Linie oder innerhalb eines Polygones dargestellt wird.",
+                "type": "string"
+              },
+              "Info": {
+                "description": "Optionale Hinweise, die in einer Detailansicht zum Kartenelement dargestellt werden.",
+                "type": "string"
+              },
+              "Gefahren": {
+                "description": "Optionale Gefahrenhinweise, die in einer Detailansicht zum Kartenelement dargestellt werden.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Typ"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "geometry",
+          "properties"
+        ]
+      }
+    }
+  },
+  "required": [
+    "type",
+    "features"
+  ]  
+}
