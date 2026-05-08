@@ -18,7 +18,7 @@ Die Dateien sind entsprechend zu benennen.
 
 ### GeoJSON Feature Properties:
 
-| Name |  Typ | Beschreibung | Verpflichtend? |
+| Property name | Property type | Beschreibung | Verpflichtend? |
 | --- | --- | ----------- | ----------- |
 | `Typ` | `string` | Definiert den Typ des Features, notwendig für die Darstellungskonfiguration (Style). | MUSS |
 | `Titel` | `string`  | Optionaler Titel, der in der Karte unter einem Punkt, entlang einer Linie oder innerhalb eines Polygones dargestellt wird. | KANN |
