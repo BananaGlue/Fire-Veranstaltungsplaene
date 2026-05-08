@@ -2,7 +2,7 @@
 
 Daten- und Stylemodell für die Darstellung von feuerwehrrelevanten Veranstaltungsinformationen auf Karten.
 
-![](Bilder/Veranstaltungsplaene.png)
+![](Bilder/VeranstaltungsplaeneKarte.png)
 
 Das Datenmodell besteht aus vorgegebenen GeoJSON-Properties und einer Style-Vorlage, die applikationsspezifisch umzusetzen ist.
 
