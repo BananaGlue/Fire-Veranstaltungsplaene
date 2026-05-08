@@ -47,20 +47,21 @@
     { 
       "type": "Feature",
       "properties": {
-          "title": "A title",
-          "description": "A description",
-          "marker-size": "medium",
-          "marker-symbol": "bus",
-          "marker-color": "#fff",
-          "stroke": "#555555",
-          "stroke-opacity": 1.0,
-          "stroke-width": 2,
-          "fill": "#555555",
-          "fill-opacity": 0.5
+        "title": "My favorite spot",
+        "description": "Best coffee in town",
+        "marker-color": "#ff0000",
+        "marker-size": "large",
+        "stroke": "#0000ff",
+        "stroke-width": 3,
+        "fill": "#00ff00",
+        "fill-opacity": 0.4
       },
       "geometry": {
           "type": "Point",
-          "coordinates": [0, 0]
+          "coordinates": [
+            7.271547105819079,
+            51.459387421814569
+          ]
       }
     }
   ]
