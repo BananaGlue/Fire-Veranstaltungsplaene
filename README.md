@@ -8,7 +8,7 @@ Das Datenmodell besteht aus vorgegebenen GeoJSON-Properties und einer Style-Vorl
 
 ## Datenmodell
 
-Je eine GeoJSON Datei als FeatureCollection mit WGS84 als Koordinatenprojektion:
+Je eine GeoJSON Datei als FeatureCollection mit **WGS84 als Koordinatenprojektion**:
 
 - Punktebene: `Veranstaltungen_p.geojson`
 - Linienebene: `Veranstaltungen_l.geojson`
@@ -20,10 +20,10 @@ Die Dateien sind entsprechend zu benennen.
 
 | Name | Beschreibung | Verpflichtend? |
 | --- | ----------- | ----------- |
-| Typ | Definiert den Typ des Features, notwendig für die Darstellungskonfiguration (Style). | MUSS |
-| Titel | Optionaler Titel, der in der Karte unter eines Punkt, entlang einer Linie oder innerhalb eines Polygones dargestellt wird. | KANN |
-| Info | Optionale Hinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
-| Gefahren | Optionale Gefahrenhinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
+| `Typ` | Definiert den Typ des Features, notwendig für die Darstellungskonfiguration (Style). | MUSS |
+| `Titel` | Optionaler Titel, der in der Karte unter einem Punkt, entlang einer Linie oder innerhalb eines Polygones dargestellt wird. | KANN |
+| `Info` | Optionale Hinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
+| `Gefahren` | Optionale Gefahrenhinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
 
 #### Beispiel
 > [!TIP]
@@ -56,14 +56,14 @@ Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedacht
 
 | Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
 | --- | ----------- | ----------- | ----------- |
-| Hinweis | Darstellung von Texthinweisen. | ![](Bilder/Punkt_Blau_2.png) | `{ "Typ": "Punkt Blau 2", "Titel": "Test2" }` |
-| Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z]) | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | ![](Bilder/Punkt_Blau_2.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2",<br> &emsp; "Titel": "Test2" <br> } </pre> |
-| Bereitstellungsraum | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
-| Bereitstellungszone | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
-| Einsatzleitung | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
-| Befehlsstelle | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
-| Drohnengruppe | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
-| Behandlungsplatz | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
+| `Hinweis` | Darstellung von Texthinweisen auf der Karte, nur sinnvoll mit Titel. | ![](Bilder/Hinweis.png) | <pre> { <br> &emsp; "Typ": "Hinweis",<br> &emsp; "Titel": "Test2" <br> } </pre> |
+| `Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z])` | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | ![](Bilder/Punkt_Blau_2.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2",<br> &emsp; "Titel": "Test2" <br> } </pre> |
+| `Bereitstellungsraum` | Darstellung vorgeplanten Orten mit taktischer Bedeutung. |  | |
+| `Bereitstellungszone` | Darstellung vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Bereitstellungszone.png) | <pre> { <br> &emsp; "Typ": "Bereitstellungszone",<br> &emsp; "Titel": "BR-Z W" <br> } </pre> |
+| `Einsatzleitung `| Darstellung vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Einsatzleitung.png) | <pre> { <br> &emsp; "Typ": "Einsatzleitung",<br> &emsp; "Titel": "EL Fw" <br> } </pre> |
+| `Befehlsstelle` | Darstellung vorgeplanten Orten mit taktischer Bedeutung. |  | |
+| `Drohnengruppe` | Darstellung vorgeplanten Orten mit taktischer Bedeutung. |  | |
+| `Behandlungsplatz` | Darstellung vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Behandlungsplatz.png) | <pre> { <br> &emsp; "Typ": "Behandlungsplatz",<br> &emsp; "Titel": "UHSt" <br> } </pre> |
 
 Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `Point`, als auch `MultiPoint`).
 
@@ -159,8 +159,8 @@ Im folgenden werden die Ausprägungen der einzelnen Linientypen und deren gedach
 
 | Typ | Angedachte Verwendung | Beispiel | Vorschau |
 | --- | ----------- | ----------- | ----------- |
-| Richtungspfeil | Darstellung von Bewegungsrichtungen. | Stellt die Verlaufsrichtung eines Veranstaltungszuges dar. | ![](Bilder/Punkt_Blau_2.png) |
-| Zaunanlage | Darstellung von Zäunen. | Stellt einen Zaun dar. Sollte in Kombination mit Zugang oder Zufahrt verwendet werden um Zugangsmöglichkeiten darzustellen. | ![](Bilder/Punkt_Blau_2.png) |
+| Richtungspfeil` `| Darstellung von Bewegungsrichtungen. | Stellt die Verlaufsrichtung eines Veranstaltungszuges dar. | ![](Bilder/Punkt_Blau_2.png) |
+| `Z`aunanlage | Darstellung von Zäunen. | Stellt einen Zaun dar. Sollte in Kombination mit Zugang oder Zufahrt verwendet werden um Zugangsmöglichkeiten darzustellen. | ![](Bilder/Punkt_Blau_2.png) |
 
 
 
@@ -172,13 +172,13 @@ Im folgenden werden die Ausprägungen der einzelnen Polygontypen und deren gedac
 
 | Typ | Angedachte Verwendung | Beispiel | Vorschau |
 | --- | ----------- | ----------- | ----------- |
-| Fläche (Rot\|Gelb\|Grün\|Blau\|Lila) | Darstellung von Veranstaltungsflächen. | Aufteilung der Veranstaltungsfläche in unterschiedliche Bereiche / Zuständigkeiten. | ![](Bilder/Punkt_Blau_2.png) |
-| Aufbauten | Darstellung von Veranstaltungsaufbauten. | Hütten / Stände oder ähnliches. | ![](Bilder/Punkt_Blau_2.png) |
-| Aufstellfläche | Vordefinierte Aufstellflächen für die Feuerwehr. | Aufstellfläche nach DIN 14095.Bereitstellungszonen oder Behandlungsplätze. | ![](Bilder/Punkt_Blau_2.png) |
-| (Feste\|Mobile\|Teilmobile) Sperre | Sperren im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. | ![](Bilder/Punkt_Blau_2.png) |
-| Indutainer | Sperre im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. | ![](Bilder/Punkt_Blau_2.png) |
-| Zugang | Zugang zu einem Gebäude. | Zugang nach DIN 14095. | ![](Bilder/Punkt_Blau_2.png) |
-| Zufahrt | Zufahrt zu der Veranstaltung. | Zufahrt nach DIN 14095. | ![](Bilder/Punkt_Blau_2.png) |
+| `Fläche (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Veranstaltungsflächen. | Aufteilung der Veranstaltungsfläche in unterschiedliche Bereiche / Zuständigkeiten. | ![](Bilder/Fläche_Lila.png) |
+| `Aufbauten` | Darstellung von Veranstaltungsaufbauten. | Hütten / Stände oder ähnliches. | ![](Bilder/Punkt_Blau_2.png) |
+| `Aufstellfläche` | Vordefinierte Aufstellflächen für die Feuerwehr. | Aufstellfläche nach DIN 14095.Bereitstellungszonen oder Behandlungsplätze. | ![](Bilder/Punkt_Blau_2.png) |
+| `(Feste\|Mobile\|Teilmobile) Sperre` | Sperren im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. | ![](Bilder/Punkt_Blau_2.png) |
+| `Indutainer` | Sperre im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. | ![](Bilder/Punkt_Blau_2.png) |
+| `Zugang` | Zugang zu einem Gebäude. | Zugang nach DIN 14095. | ![](Bilder/Punkt_Blau_2.png) |
+| `Z`ufahrt | Zufahrt zu der Veranstaltung. | Zufahrt nach DIN 14095. | ![](Bilder/Punkt_Blau_2.png) |
 
 
 Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `Polygon` als auch `MultiPolygon`).
@@ -201,12 +201,12 @@ Im folgenden werden die zu verwendenden Füllfarben und Symbole der einzelnen Pu
 
 | Typ | Füllfarbe (hex) | Symbol |
 | --- | ----------- | ----------- | 
-| Hinweis | #333333EE | `circle.fill` |
-| Punkt Rot ([1-50]\|[A-Z]) | #FF0000AA | `[1-50]|[A-Z].circle.fill` |
-| Punkt Gelb ([1-50]\|[A-Z]) | #FFFF00AA | `[1-50]|[A-Z].circle.fill` |
-| Punkt Grün ([1-50]\|[A-Z]) | #00FF00AA | `[1-50]|[A-Z].circle.fill` |
-| Punkt Blau ([1-50]\|[A-Z]) | #00aaffAA | `[1-50]|[A-Z].circle.fill` |
-| Punkt Lila ([1-50]\|[A-Z]) | #eb34b1AA | `[1-50]|[A-Z].circle.fill` |
+| `Hinweis` | #333333EE | `circle.fill` |
+| `Punkt Rot ([1-50]\|[A-Z])` | #FF0000AA | `([1-50]|[A-Z]).circle.fill` |
+| `Punkt Gelb ([1-50]\|[A-Z])` | #FFFF00AA | `([1-50]|[A-Z]).circle.fill` |
+| `Punkt Grün ([1-50]\|[A-Z])` | #00FF00AA | `([1-50]|[A-Z]).circle.fill` |
+| `Punkt Blau ([1-50]\|[A-Z])` | #00aaffAA | `([1-50]|[A-Z]).circle.fill` |
+| `Punkt Lila ([1-50]\|[A-Z])` | #eb34b1AA | `([1-50]|[A-Z]).circle.fill` |
 
 #### Linientypen
 
@@ -214,8 +214,8 @@ Im folgenden werden die zu verwendenden Linienfarben und Dashpattern der einzeln
 
 | Typ | Linienfarbe (hex) | Dashpattern |
 | --- | ----------- | ----------- | 
-| Richtungspfeil | #8F34EBEE   | `- -` |
-| Zaunanlage | #000000EE | `- . .` |
+| `Richtungspfeil | #8F34EBEE | `- -` |
+| `Zaunanlage | #000000EE | `- . .` |
 
 #### Polygontypen
 
@@ -223,19 +223,19 @@ Im folgenden werden die zu verwendenden Linienfarben, Dashpattern und Füllfarbe
 
 | Typ | Linienfarbe (hex) | Dashpattern | Füllfarbe (hex) |
 | --- | ----------- | ----------- | ----------- | 
-| Fläche Rot | #000000AA | `-` | #FF000066 | 
-| Fläche Gelb | #000000AA | `-` | #FFFF0066 | 
-| Fläche Grün | #000000AA | `-` | #00FF0066 |
-| Fläche Blau | #000000AA | `-` | #00aaff66 |
-| Fläche Lila | #000000AA | `-` | #eb34b166 |
-| Aufbauten | #000000AA | `-` | #FBB13066 |
-| Aufstellfläche | #FF0000 | `- -` | #8080807F |
-| Feste Sperre | #000000 | `-` | #FF0000AA |
-| Mobile Sperre | #000000 | `- -` | #00FF00AA |
-| Teilmobile Sperre | #000000 | `-` | #FFFF00AA |
-| Indutainer | #000000 | `-` | #0000FFAA |
-| Zugang | - | - | #000000 |
-| Zufahrt | #000000 | `-` | #00FF00AA |
+| `Fläche Rot` | #000000AA | `-` | #FF000066 | 
+| `Fläche Gelb` | #000000AA | `-` | #FFFF0066 | 
+| `Fläche Grün` | #000000AA | `-` | #00FF0066 |
+| `Fläche Blau` | #000000AA | `-` | #00aaff66 |
+| `Fläche Lila` | #000000AA | `-` | #eb34b166 |
+| `Aufbauten` | #000000AA | `-` | #FBB13066 |
+| `Aufstellfläche` | #FF0000 | `- -` | #8080807F |
+| `Feste Sperre` | #000000 | `-` | #FF0000AA |
+| `Mobile Sperre `| #000000 | `- -` | #00FF00AA |
+| `Teilmobile Sperre` | #000000 | `-` | #FFFF00AA |
+| `Indutainer` | #000000 | `-` | #0000FFAA |
+| `Zugang` | - | - | #000000 |
+| `Zufahrt `| #000000 | `-` | #00FF00AA |
 
 #### Hilfspunkttypen
 
@@ -243,51 +243,5 @@ Im folgenden werden die zu verwendenden Füllfarben und Symbole der definierten 
 
 | Typ | Spezialfall | Symbol |
 | --- | ----------- | ----------- | 
-| Aufbauten (Polygon) | `Gefahren == 'Gas'` | DIN 14095 `P617` |
+| `Aufbauten` (Polygon) | `Gefahren CONTAINS 'Gas'` | DIN 14095 `P617` |
 
-
-### Punkttypen
-
-| Beispiel 1 | Beispiel 2 | Beispiel 3 |
-|------------|-----------|-----------|
-| ![](Bilder/Punkt_Blau_2.png) | ![](Bilder/Punkt_Gelb_3.png) | ![](Bilder/Punkt_Rot_X.png) |
-
-
-> [!TIP]
-> **Beispiel 1**
-> ```json
-> {
->   "type": "Feature",
->   "properties": {
->     "Typ": "Punkt Blau 2",
->     "Titel": "Test2"
->   },
->   "geometry": {...}
-> }
-> ```
-
-> [!TIP]
-> **Beispiel 2**
-> ```json
-> {
->   "type": "Feature",
->   "properties": {
->     "Typ": "Punkt Gelb 3",
->     "Titel": "Test3"
->   },
->   "geometry": {...}
-> }
-> ```
-
-> [!TIP]
-> **Beispiel 3**
-> ```json
-> {
->   "type": "Feature",
->   "properties": {
->     "Typ": "Punkt Rot X",
->     "Titel": "Metalbühne"
->   },
->   "geometry": {...}
-> }
-> ```
