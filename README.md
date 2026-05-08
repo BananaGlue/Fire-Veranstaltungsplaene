@@ -54,16 +54,16 @@ Die Dateien sind entsprechend zu benennen.
 
 Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedachter Anwendungszweck definiert:
 
-| Typ | Angedachte Verwendung | Beispiel | Vorschau | Feature Properties |
-| --- | ----------- | ----------- | ----------- | ----------- |
-| Hinweis | Darstellung von Texthinweisen. | Ab hier keine Wendemöglichkeit mehr. | ![](Bilder/Punkt_Blau_2.png) | `{ "Typ": "Punkt Blau 2", "Titel": "Test2" }` |
-| Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z]) | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | Punkt Rot 13 | ![](Bilder/Punkt_Blau_2.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2",<br> &emsp; "Titel": "Test2" <br> } </pre> |
-| Bereitstellungsraum | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-Z1 | ![](Bilder/Punkt_Blau_2.png) | |
-| Bereitstellungszone | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-3 | ![](Bilder/Punkt_Blau_2.png) | |
-| Einsatzleitung | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | EL FW | ![](Bilder/Punkt_Blau_2.png) | |
-| Befehlsstelle | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BfSt Pol | ![](Bilder/Punkt_Blau_2.png) | |
-| Drohnengruppe | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | Drohnengruppe | ![](Bilder/Punkt_Blau_2.png) | |
-| Behandlungsplatz | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BHP-1 | ![](Bilder/Punkt_Blau_2.png) | |
+| Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
+| --- | ----------- | ----------- | ----------- |
+| Hinweis | Darstellung von Texthinweisen. | ![](Bilder/Punkt_Blau_2.png) | `{ "Typ": "Punkt Blau 2", "Titel": "Test2" }` |
+| Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z]) | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | ![](Bilder/Punkt_Blau_2.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2",<br> &emsp; "Titel": "Test2" <br> } </pre> |
+| Bereitstellungsraum | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
+| Bereitstellungszone | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
+| Einsatzleitung | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
+| Befehlsstelle | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
+| Drohnengruppe | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
+| Behandlungsplatz | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | ![](Bilder/Punkt_Blau_2.png) | |
 
 Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `Point`, als auch `MultiPoint`).
 
