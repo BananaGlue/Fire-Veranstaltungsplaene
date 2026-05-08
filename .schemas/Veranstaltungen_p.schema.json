@@ -69,15 +69,24 @@
               },
               "Titel": {
                 "description": "Optionaler Titel, der in der Karte unter eines Punkt, entlang einer Linie oder innerhalb eines Polygones dargestellt wird.",
-                "type": "string"
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "Info": {
                 "description": "Optionale Hinweise, die in einer Detailansicht zum Kartenelement dargestellt werden.",
-                "type": "string"
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "Gefahren": {
                 "description": "Optionale Gefahrenhinweise, die in einer Detailansicht zum Kartenelement dargestellt werden.",
-                "type": "string"
+                "type": [
+                  "string",
+                  "null"
+                ]
               }
             },
             "required": [
