@@ -36,7 +36,9 @@ Die Dateien sind entsprechend zu benennen.
 >       "type": "Feature",
 >       "properties": {
 >         "Typ": "Punkt Rot X",
->         "Titel": "Metalbühne"
+>         "Titel": "Metalbühne",
+>         "Info": "Ab 22 Uhr spielt Alice Cooper.",
+>         "Gefahren": null
 >       },
 >       "geometry": {
 >         "type": "Point"
@@ -56,7 +58,7 @@ Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedacht
 
 | Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
 | --- | ----------- | ----------- | ----------- |
-| `Hinweis` | Darstellung von Texthinweisen auf der Karte, nur sinnvoll mit Titel. | ![](Bilder/Hinweis.png) | <pre> { <br> &emsp; "Typ": "Hinweis",<br> &emsp; "Titel": "Test2" <br> } </pre> |
+| `Hinweis` | Darstellung von Texthinweisen auf der Karte, nur sinnvoll mit Titel. |  | <pre> { <br> &emsp; "Typ": "Hinweis",<br> &emsp; "Titel": "Test2" <br> } </pre> |
 | `Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z])` | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | ![](Bilder/Punkt_Blau_2.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2",<br> &emsp; "Titel": "Test2" <br> } </pre> |
 | `Bereitstellungsraum` | Darstellung vorgeplanten Orten mit taktischer Bedeutung. |  | |
 | `Bereitstellungszone` | Darstellung vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Bereitstellungszone.png) | <pre> { <br> &emsp; "Typ": "Bereitstellungszone",<br> &emsp; "Titel": "BR-Z W" <br> } </pre> |
@@ -159,8 +161,8 @@ Im folgenden werden die Ausprägungen der einzelnen Linientypen und deren gedach
 
 | Typ | Angedachte Verwendung | Beispiel | Vorschau |
 | --- | ----------- | ----------- | ----------- |
-| Richtungspfeil` `| Darstellung von Bewegungsrichtungen. | Stellt die Verlaufsrichtung eines Veranstaltungszuges dar. | ![](Bilder/Punkt_Blau_2.png) |
-| `Z`aunanlage | Darstellung von Zäunen. | Stellt einen Zaun dar. Sollte in Kombination mit Zugang oder Zufahrt verwendet werden um Zugangsmöglichkeiten darzustellen. | ![](Bilder/Punkt_Blau_2.png) |
+| `Richtungspfeil` | Darstellung von Bewegungsrichtungen. | Stellt die Verlaufsrichtung eines Veranstaltungszuges dar. | ![](Bilder/Punkt_Blau_2.png) |
+| `Zaunanlage` | Darstellung von Zäunen. | Stellt einen Zaun dar. Sollte in Kombination mit Zugang oder Zufahrt verwendet werden um Zugangsmöglichkeiten darzustellen. | ![](Bilder/Punkt_Blau_2.png) |
 
 
 
@@ -202,11 +204,11 @@ Im folgenden werden die zu verwendenden Füllfarben und Symbole der einzelnen Pu
 | Typ | Füllfarbe (hex) | Symbol |
 | --- | ----------- | ----------- | 
 | `Hinweis` | #333333EE | `circle.fill` |
-| `Punkt Rot ([1-50]\|[A-Z])` | #FF0000AA | `([1-50]|[A-Z]).circle.fill` |
-| `Punkt Gelb ([1-50]\|[A-Z])` | #FFFF00AA | `([1-50]|[A-Z]).circle.fill` |
-| `Punkt Grün ([1-50]\|[A-Z])` | #00FF00AA | `([1-50]|[A-Z]).circle.fill` |
-| `Punkt Blau ([1-50]\|[A-Z])` | #00aaffAA | `([1-50]|[A-Z]).circle.fill` |
-| `Punkt Lila ([1-50]\|[A-Z])` | #eb34b1AA | `([1-50]|[A-Z]).circle.fill` |
+| `Punkt Rot ([1-50]\|[A-Z])` | #FF0000AA | `([1-50]\|[A-Z]).circle.fill` |
+| `Punkt Gelb ([1-50]\|[A-Z])` | #FFFF00AA | `([1-50]\|[A-Z]).circle.fill` |
+| `Punkt Grün ([1-50]\|[A-Z])` | #00FF00AA | `([1-50]\|[A-Z]).circle.fill` |
+| `Punkt Blau ([1-50]\|[A-Z])` | #00aaffAA | `([1-50]\|[A-Z]).circle.fill` |
+| `Punkt Lila ([1-50]\|[A-Z])` | #eb34b1AA | `([1-50]\|[A-Z]).circle.fill` |
 
 #### Linientypen
 
