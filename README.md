@@ -18,12 +18,12 @@ Die Dateien sind entsprechend zu benennen.
 
 ### GeoJSON Feature Properties:
 
-| Name | Beschreibung | Verpflichtend? |
-| --- | ----------- | ----------- |
-| `Typ` | Definiert den Typ des Features, notwendig für die Darstellungskonfiguration (Style). | MUSS |
-| `Titel` | Optionaler Titel, der in der Karte unter einem Punkt, entlang einer Linie oder innerhalb eines Polygones dargestellt wird. | KANN |
-| `Info` | Optionale Hinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
-| `Gefahren` | Optionale Gefahrenhinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
+| Name |  Typ | Beschreibung | Verpflichtend? |
+| --- | --- | ----------- | ----------- |
+| `Typ` | `string` | Definiert den Typ des Features, notwendig für die Darstellungskonfiguration (Style). | MUSS |
+| `Titel` | `string`  | Optionaler Titel, der in der Karte unter einem Punkt, entlang einer Linie oder innerhalb eines Polygones dargestellt wird. | KANN |
+| `Info` | `string` | Optionale Hinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
+| `Gefahren` | `string` | Optionale Gefahrenhinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
 
 #### Beispiel
 > [!TIP]
@@ -175,11 +175,11 @@ Im folgenden werden die Ausprägungen der einzelnen Polygontypen und deren gedac
 | Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
 | --- | ----------- | ----------- | ----------- |
 | `Fläche (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Veranstaltungsflächen mit unterschiedlichen Farben. | ![](Bilder/Flaeche_Lila.png) | <pre> { <br> &emsp; "Typ": "Fläche Lila",<br> &emsp; "Titel": "Veranstaltungsgelände" <br> } </pre> |
-| `Aufbauten` | Darstellung von Veranstaltungsaufbauten, z. B. Hütten / Stände oder ähnliches. |  | <pre> { <br> &emsp; "Typ": "Aufbauten",<br> &emsp; "Titel": "Stand 83" <br> } </pre> |
-| `Aufstellfläche` | Vordefinierte Aufstellflächen für die Feuerwehr. | | <pre> { <br> &emsp; "Typ": "Aufstellfläche",<br> &emsp; "Titel": "Marathon" <br> } </pre> |
+| `Aufbauten` | Darstellung von Veranstaltungsaufbauten, z. B. Hütten / Stände oder ähnliches. |  | <pre> { <br> &emsp; "Typ": "Aufbauten",<br> &emsp; "Titel": "100",<br> &emsp; "Gefahren": "Gas" <br> } </pre> |
+| `Aufstellfläche` | Vordefinierte Aufstellflächen für die Feuerwehr. | |  |
 | `(Feste\|Mobile\|Teilmobile) Sperre` | Sperre im Rahmen des Veranstaltungsschutzes. | ![](Bilder/Feste_Sperre.png) | <pre> { <br> &emsp; "Typ": "Feste Sperre",<br> &emsp; "Titel": "Sperre 4" <br> } </pre> |
-| `Indutainer` | Sperre im Rahmen des Veranstaltungsschutzes. |  | <pre> { <br> &emsp; "Typ": "Indutainer",<br> &emsp; "Titel": "Marathon" <br> } </pre> |
-| `Zugang` | Zugangsmöglichkeiten zu einem Gebäude / Gelände. |  | <pre> { <br> &emsp; "Typ": "Zugang",<br> &emsp; "Titel": "Marathon" <br> } </pre> |
+| `Indutainer` | Sperre im Rahmen des Veranstaltungsschutzes. |  | <pre> { <br> &emsp; "Typ": "Indutainer",<br> &emsp; "Titel": "Indutainer 27" <br> } </pre> |
+| `Zugang` | Zugangsmöglichkeiten zu einem Gebäude / Gelände. |  | <pre> { <br> &emsp; "Typ": "Zugang" <br> } </pre> |
 | `Zufahrt` | Zufahrtsmöglichkeiten zu der Veranstaltung. | ![](Bilder/Zufahrt.png) | <pre> { <br> &emsp; "Typ": "Zufahrt" <br> } </pre> |
 
 
@@ -216,8 +216,8 @@ Im folgenden werden die zu verwendenden Linienfarben und Dashpattern der einzeln
 
 | Typ | Linienfarbe (hex) | Dashpattern | Hinweis |
 | --- | ----------- | ----------- | ----------- | 
-| `Richtungspfeil | #8F34EBEE | `- -` | Der Richtungspfeil ist in Verlaufsrichtung applikationsspezifisch hinzuzufügen. |
-| `Zaunanlage | #000000EE | `- . .` | |
+| `Richtungspfeil` | #8F34EBEE | `- -` | Der Richtungspfeil ist in Verlaufsrichtung applikationsspezifisch hinzuzufügen. |
+| `Zaunanlage` | #000000EE | `- . .` | |
 
 #### Polygontypen
 
