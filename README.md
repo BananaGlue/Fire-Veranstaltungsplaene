@@ -2,7 +2,7 @@
 
 Daten- und Stylemodell für die Darstellung von feuerwehrrelevanten Veranstaltungsinformationen auf Karten.
 
-![](Bilder/Veranstaltungspläne.png)
+![](Bilder/Veranstaltungsplaene.png)
 
 Das Datenmodell besteht aus vorgegebenen GeoJSON-Properties und einer Style-Vorlage, die applikationsspezifisch umzusetzen ist.
 
@@ -172,7 +172,7 @@ Im folgenden werden die Ausprägungen der einzelnen Polygontypen und deren gedac
 
 | Typ | Angedachte Verwendung | Beispiel | Vorschau |
 | --- | ----------- | ----------- | ----------- |
-| `Fläche (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Veranstaltungsflächen. | Aufteilung der Veranstaltungsfläche in unterschiedliche Bereiche / Zuständigkeiten. | ![](Bilder/Fläche_Lila.png) |
+| `Fläche (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Veranstaltungsflächen. | Aufteilung der Veranstaltungsfläche in unterschiedliche Bereiche / Zuständigkeiten. | ![](Bilder/Flaeche_Lila.png) |
 | `Aufbauten` | Darstellung von Veranstaltungsaufbauten. | Hütten / Stände oder ähnliches. | ![](Bilder/Punkt_Blau_2.png) |
 | `Aufstellfläche` | Vordefinierte Aufstellflächen für die Feuerwehr. | Aufstellfläche nach DIN 14095.Bereitstellungszonen oder Behandlungsplätze. | ![](Bilder/Punkt_Blau_2.png) |
 | `(Feste\|Mobile\|Teilmobile) Sperre` | Sperren im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. | ![](Bilder/Punkt_Blau_2.png) |
