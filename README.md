@@ -2,7 +2,7 @@
 
 Daten- und Stylemodell für die Darstellung von feuerwehrrelevanten Veranstaltungsinformationen auf Karten.
 
-![](Bilder/IMG_0356.PNG)
+![](Bilder/Veranstaltungspläne.png)
 
 Das Datenmodell besteht aus vorgegebenen GeoJSON-Properties und einer Style-Vorlage, die applikationsspezifisch umzusetzen ist.
 
@@ -25,20 +25,45 @@ Die Dateien sind entsprechend zu benennen.
 | Info | Optionale Hinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
 | Gefahren | Optionale Gefahrenhinweise, die in einer Detailansicht zum Kartenelement dargestellt werden. | KANN |
 
+#### Beispiel
+> [!TIP]
+> **Beispiel FeatureCollection mit einem Punktfeature**
+> ```json
+> {
+>   "type": "FeatureCollection",
+>   "features": [
+>     {
+>       "type": "Feature",
+>       "properties": {
+>         "Typ": "Punkt Rot X",
+>         "Titel": "Metalbühne"
+>       },
+>       "geometry": {
+>         "type": "Point"
+>         "coordinates": [
+>           7.27044,
+>           51.45743
+>         ]
+>       }
+>     }
+>   ]
+> }
+> ```
+
 ### Punkttypen
 
 Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedachter Anwendungszweck definiert:
 
-| Typ | Angedachte Verwendung | Beispiel | Vorschau |
-| --- | ----------- | ----------- |  ----------- |
-| Hinweis | Darstellung von Texthinweisen. | Ab hier keine Wendemöglichkeit mehr. | ![](Bilder/Punkt_Blau_2.png) |
-| Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z]) | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | Punkt Rot 13 | ![](Bilder/Punkt_Blau_2.png) |
-| Bereitstellungsraum | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-Z1 | ![](Bilder/Punkt_Blau_2.png) |
-| Bereitstellungszone | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-3 | ![](Bilder/Punkt_Blau_2.png) |
-| Einsatzleitung | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | EL FW | ![](Bilder/Punkt_Blau_2.png) |
-| Befehlsstelle | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BfSt Pol | ![](Bilder/Punkt_Blau_2.png) |
-| Drohnengruppe | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | Drohnengruppe | ![](Bilder/Punkt_Blau_2.png) |
-| Behandlungsplatz | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BHP-1 | ![](Bilder/Punkt_Blau_2.png) |
+| Typ | Angedachte Verwendung | Beispiel | Vorschau | Feature Properties |
+| --- | ----------- | ----------- | ----------- | ----------- |
+| Hinweis | Darstellung von Texthinweisen. | Ab hier keine Wendemöglichkeit mehr. | ![](Bilder/Punkt_Blau_2.png) | `{ "Typ": "Punkt Blau 2", "Titel": "Test2" }` |
+| Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z]) | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | Punkt Rot 13 | ![](Bilder/Punkt_Blau_2.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2",<br> &emsp; "Titel": "Test2" <br> } </pre> |
+| Bereitstellungsraum | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-Z1 | ![](Bilder/Punkt_Blau_2.png) | |
+| Bereitstellungszone | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-3 | ![](Bilder/Punkt_Blau_2.png) | |
+| Einsatzleitung | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | EL FW | ![](Bilder/Punkt_Blau_2.png) | |
+| Befehlsstelle | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BfSt Pol | ![](Bilder/Punkt_Blau_2.png) | |
+| Drohnengruppe | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | Drohnengruppe | ![](Bilder/Punkt_Blau_2.png) | |
+| Behandlungsplatz | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BHP-1 | ![](Bilder/Punkt_Blau_2.png) | |
 
 Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `Point`, als auch `MultiPoint`).
 
@@ -133,7 +158,7 @@ Es ist darauf zu achten, dass die Typen exakt wie angegeben definiert sind. Zus�
 Im folgenden werden die Ausprägungen der einzelnen Linientypen und deren gedachter Anwendungszweck definiert:
 
 | Typ | Angedachte Verwendung | Beispiel | Vorschau |
-| --- | ----------- | ----------- |  ----------- |
+| --- | ----------- | ----------- | ----------- |
 | Richtungspfeil | Darstellung von Bewegungsrichtungen. | Stellt die Verlaufsrichtung eines Veranstaltungszuges dar. | ![](Bilder/Punkt_Blau_2.png) |
 | Zaunanlage | Darstellung von Zäunen. | Stellt einen Zaun dar. Sollte in Kombination mit Zugang oder Zufahrt verwendet werden um Zugangsmöglichkeiten darzustellen. | ![](Bilder/Punkt_Blau_2.png) |
 
@@ -146,7 +171,7 @@ Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen 
 Im folgenden werden die Ausprägungen der einzelnen Polygontypen und deren gedachter Anwendungszweck definiert:
 
 | Typ | Angedachte Verwendung | Beispiel | Vorschau |
-| --- | ----------- | ----------- |  ----------- |
+| --- | ----------- | ----------- | ----------- |
 | Fläche (Rot\|Gelb\|Grün\|Blau\|Lila) | Darstellung von Veranstaltungsflächen. | Aufteilung der Veranstaltungsfläche in unterschiedliche Bereiche / Zuständigkeiten. | ![](Bilder/Punkt_Blau_2.png) |
 | Aufbauten | Darstellung von Veranstaltungsaufbauten. | Hütten / Stände oder ähnliches. | ![](Bilder/Punkt_Blau_2.png) |
 | Aufstellfläche | Vordefinierte Aufstellflächen für die Feuerwehr. | Aufstellfläche nach DIN 14095.Bereitstellungszonen oder Behandlungsplätze. | ![](Bilder/Punkt_Blau_2.png) |
