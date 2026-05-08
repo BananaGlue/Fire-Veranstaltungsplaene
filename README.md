@@ -4,21 +4,21 @@ Daten- und Stylemodell für die Darstellung von feuerwehrrelevanten Veranstaltun
 
 ![](Bilder/IMG_0356.PNG)
 
-### Spezifikation
-[Details](Veranstaltungspläne.md)
-
+Das Datenmodell besteht aus vorgegebenen GeoJSON-Properties und einer Style-Vorlage, die applikationsspezifisch umzusetzen ist.
 
 ## Datenmodell
 
 Je eine GeoJSON Datei als FeatureCollection mit WGS84 als Koordinatenprojektion:
 
-- Punktebene
-- Linienebene
-- Polygonebene
+- Punktebene:   Veranstaltungen_p.geojson
+- Linienebene:  Veranstaltungen_l.geojson
+- Polygonebene: Veranstaltungen_f.geojson
 
-Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. Polygon als auch MultiPolygon).
+Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `Point`, als auch `MultiPoint`, `LineString` als auch `MultiLineString`, `Polygon` als auch `MultiPolygon`).
 
-Alle drei Ebenen haben dasselbe Grunddatenmodell: `Typ`, `Titel`, `Info` und `Gefahren`. Typ bestimmt die Darstellung in den anzeigenden Anwendungen. `Titel` ist ein optionaler auf der Karte angezeigter Text, `Info` und `Gefahren` sind Texte, die in einer Detailansicht angezeigt werden.
+Alle drei Ebenen haben dasselbe Grunddatenmodell der GeoJSON-Properties: `Typ`, `Titel`, `Info` und `Gefahren`. 
+
+`Typ` bestimmt die Darstellung in den anzeigenden Anwendungen. `Titel` ist ein optionaler auf der Karte angezeigter Text, `Info` und `Gefahren` sind Texte, die in einer Detailansicht angezeigt werden.
 
 `Typ` MUSS vorhanden sein, `Titel`, `Info` und `Gefahren` sind optional (können weggelassen werden) oder können `null` zugewiesen bekommen.
 
@@ -41,39 +41,39 @@ Für die drei Ebenen existiert jeweils auch ein json.schema:
 
 Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedachter Anwendungszweck definiert:
 
-| Typ | Angedachte Verwendung | Beispiel |
-| --- | ----------- | ----------- | 
-| Hinweis | Darstellung von Texthinweisen. | Ab hier keine Wendemöglichkeit mehr. |
-| Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]|[A-Z]) | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | Punkt Rot 13 |
-| Bereitstellungsraum | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-Z1 |
-| Bereitstellungszone | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-3 |
-| Einsatzleitung | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | EL FW |
-| Befehlsstelle | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BfSt Pol |
-| Drohnengruppe | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | Drohnengruppe |
-| Behandlungsplatz | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BHP-1 |
+| Typ | Angedachte Verwendung | Beispiel | Vorschau |
+| --- | ----------- | ----------- |  ----------- |
+| Hinweis | Darstellung von Texthinweisen. | Ab hier keine Wendemöglichkeit mehr. | ![](Bilder/Punkt_Blau_2.png) |
+| Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]|[A-Z]) | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | Punkt Rot 13 | ![](Bilder/Punkt_Blau_2.png) |
+| Bereitstellungsraum | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-Z1 | ![](Bilder/Punkt_Blau_2.png) |
+| Bereitstellungszone | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BR-3 | ![](Bilder/Punkt_Blau_2.png) |
+| Einsatzleitung | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | EL FW | ![](Bilder/Punkt_Blau_2.png) |
+| Befehlsstelle | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BfSt Pol | ![](Bilder/Punkt_Blau_2.png) |
+| Drohnengruppe | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | Drohnengruppe | ![](Bilder/Punkt_Blau_2.png) |
+| Behandlungsplatz | Darstellung von taktischen Zeichen für vorgeplante Orte mit taktischer Bedeutung. | BHP-1 | ![](Bilder/Punkt_Blau_2.png) |
 
 #### Linientypen
 
 Im folgenden werden die Ausprägungen der einzelnen Linientypen und deren gedachter Anwendungszweck definiert:
 
-| Typ | Angedachte Verwendung | Beispiel |
-| --- | ----------- | ----------- | 
-| Richtungspfeil | Darstellung von Bewegungsrichtungen. | Stellt die Verlaufsrichtung eines Veranstaltungszuges dar. |
-| Zaunanlage | Darstellung von Zäunen. | Stellt einen Zaun dar. Sollte in Kombination mit Zugang oder Zufahrt verwendet werden um Zugangsmöglichkeiten darzustellen. |
+| Typ | Angedachte Verwendung | Beispiel | Vorschau |
+| --- | ----------- | ----------- |  ----------- |
+| Richtungspfeil | Darstellung von Bewegungsrichtungen. | Stellt die Verlaufsrichtung eines Veranstaltungszuges dar. | ![](Bilder/Punkt_Blau_2.png) |
+| Zaunanlage | Darstellung von Zäunen. | Stellt einen Zaun dar. Sollte in Kombination mit Zugang oder Zufahrt verwendet werden um Zugangsmöglichkeiten darzustellen. | ![](Bilder/Punkt_Blau_2.png) |
 
 #### Polygontypen
 
 Im folgenden werden die Ausprägungen der einzelnen Polygontypen und deren gedachter Anwendungszweck definiert:
 
-| Typ | Angedachte Verwendung | Beispiel |
-| --- | ----------- | ----------- | 
-| Fläche (Rot\|Gelb\|Grün\|Blau\|Lila) | Darstellung von Veranstaltungsflächen. | Aufteilung der Veranstaltungsfläche in unterschiedliche Bereiche / Zuständigkeiten. |
-| Aufbauten | Darstellung von Veranstaltungsaufbauten. | Hütten / Stände oder ähnliches. |
-| Aufstellfläche | Vordefinierte Aufstellflächen für die Feuerwehr. | Aufstellfläche nach DIN 14095.Bereitstellungszonen oder Behandlungsplätze. |
-| (Feste\|Mobile\|Teilmobile) Sperre | Sperren im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. |
-| Indutainer | Sperre im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. |
-| Zugang | Zugang zu einem Gebäude. | Zugang nach DIN 14095. |
-| Zufahrt | Zufahrt zu der Veranstaltung. | Zufahrt nach DIN 14095. |
+| Typ | Angedachte Verwendung | Beispiel | Vorschau |
+| --- | ----------- | ----------- |  ----------- |
+| Fläche (Rot\|Gelb\|Grün\|Blau\|Lila) | Darstellung von Veranstaltungsflächen. | Aufteilung der Veranstaltungsfläche in unterschiedliche Bereiche / Zuständigkeiten. | ![](Bilder/Punkt_Blau_2.png) |
+| Aufbauten | Darstellung von Veranstaltungsaufbauten. | Hütten / Stände oder ähnliches. | ![](Bilder/Punkt_Blau_2.png) |
+| Aufstellfläche | Vordefinierte Aufstellflächen für die Feuerwehr. | Aufstellfläche nach DIN 14095.Bereitstellungszonen oder Behandlungsplätze. | ![](Bilder/Punkt_Blau_2.png) |
+| (Feste\|Mobile\|Teilmobile) Sperre | Sperren im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. | ![](Bilder/Punkt_Blau_2.png) |
+| Indutainer | Sperre im Rahmen des Veranstaltungsschutzes. | Zeigt anfahrenden Kräften Durchlassmöglichkeiten bzw. für die Anfahrt ungeeignete Straßen. | ![](Bilder/Punkt_Blau_2.png) |
+| Zugang | Zugang zu einem Gebäude. | Zugang nach DIN 14095. | ![](Bilder/Punkt_Blau_2.png) |
+| Zufahrt | Zufahrt zu der Veranstaltung. | Zufahrt nach DIN 14095. | ![](Bilder/Punkt_Blau_2.png) |
 
 ## Stylemodell
 
