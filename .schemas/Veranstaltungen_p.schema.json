@@ -41,7 +41,11 @@
                 "oneOf": [
                   { 
                     "enum": [
-                      "Hinweis",
+                      "Hinweis Rot",
+                      "Hinweis Gelb",
+                      "Hinweis Grün",
+                      "Hinweis Blau",
+                      "Hinweis Lila",
                       "Bereitstellungsraum",
                       "Bereitstellungszone",
                       "Einsatzleitung",

@@ -58,7 +58,7 @@ Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedacht
 
 | Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
 | --- | ----------- | ----------- | ----------- |
-| `Hinweis` | Darstellung von Texthinweisen auf der Karte, nur sinnvoll mit Titel. | ![](Bilder/Hinweis_Gelb.png) | <pre> { <br> &emsp; "Typ": "Hinweis",<br> &emsp; "Titel": "BOS-WC" <br> } </pre> |
+| `Hinweis (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Texthinweisen auf der Karte, nur sinnvoll mit Titel. | ![](Bilder/Hinweis_Gelb.png) | <pre> { <br> &emsp; "Typ": "Hinweis Gelb",<br> &emsp; "Titel": "BOS-WC" <br> } </pre> |
 | `Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z])` | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | ![](Bilder/Punkt_Blau_2.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2",<br> &emsp; "Titel": "Test2" <br> } </pre> |
 | `Bereitstellungsraum` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | |
 | `Bereitstellungszone` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Bereitstellungszone.png) | <pre> { <br> &emsp; "Typ": "Bereitstellungszone",<br> &emsp; "Titel": "BR-Z W" <br> } </pre> |
@@ -203,12 +203,16 @@ Im folgenden werden die zu verwendenden Füllfarben und Symbole der einzelnen Pu
 
 | Typ | Füllfarbe (hex) | Symbol |
 | --- | ----------- | ----------- | 
-| `Hinweis` | #333333EE | `circle.fill` |
-| `Punkt Rot ([1-50]\|[A-Z])` | #FF0000AA | `([1-50]\|[A-Z]).circle.fill` |
-| `Punkt Gelb ([1-50]\|[A-Z])` | #FFFF00AA | `([1-50]\|[A-Z]).circle.fill` |
-| `Punkt Grün ([1-50]\|[A-Z])` | #00FF00AA | `([1-50]\|[A-Z]).circle.fill` |
-| `Punkt Blau ([1-50]\|[A-Z])` | #00aaffAA | `([1-50]\|[A-Z]).circle.fill` |
-| `Punkt Lila ([1-50]\|[A-Z])` | #eb34b1AA | `([1-50]\|[A-Z]).circle.fill` |
+| `Hinweis Rot` | #FF000066 | `circle.fill` |
+| `Hinweis Gelb` | #FFFF0066 | `circle.fill` |
+| `Hinweis Grün` | #00FF0066 | `circle.fill` |
+| `Hinweis Blau` | #00aaff66 | `circle.fill` |
+| `Hinweis Lila` | #eb34b166 | `circle.fill` |
+| `Punkt Rot ([1-50]\|[A-Z])` | #FF000066 | `([1-50]\|[A-Z]).circle.fill` |
+| `Punkt Gelb ([1-50]\|[A-Z])` | #FFFF0066 | `([1-50]\|[A-Z]).circle.fill` |
+| `Punkt Grün ([1-50]\|[A-Z])` | #00FF0066 | `([1-50]\|[A-Z]).circle.fill` |
+| `Punkt Blau ([1-50]\|[A-Z])` | #00aaff66 | `([1-50]\|[A-Z]).circle.fill` |
+| `Punkt Lila ([1-50]\|[A-Z])` | #eb34b166 | `([1-50]\|[A-Z]).circle.fill` |
 
 #### Linientypen
 
