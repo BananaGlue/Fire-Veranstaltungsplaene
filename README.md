@@ -2,7 +2,7 @@
 
 Daten- und Stylemodell für die Darstellung von feuerwehrrelevanten Veranstaltungsinformationen auf Karten.
 
-![](Bilder/VeranstaltungsplaeneKarte.png)
+![](Bilder/Veranstaltungsplaene.png)
 
 Das Datenmodell besteht aus vorgegebenen GeoJSON-Properties und einer Style-Vorlage, die applikationsspezifisch umzusetzen ist.
 
@@ -59,15 +59,15 @@ Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedacht
 | Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
 | --- | ----------- | ----------- | ----------- |
 | `Hinweis (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Texthinweisen auf der Karte, nur sinnvoll mit Titel. | ![](Bilder/Hinweis_Gelb.png) | <pre> { <br> &emsp; "Typ": "Hinweis Gelb",<br> &emsp; "Titel": "BOS-WC" <br> } </pre> |
-| `Hinweis Global` | Wie Hinweis, nur ist der Text auch in kleineren Zoomstufen sichtbar. | ![](Bilder/Hinweis_Gelb.png) | <pre> { <br> &emsp; "Typ": "Hinweis Gelb",<br> &emsp; "Titel": "BOS-WC" <br> } </pre> |
-| `Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z])` | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | ![](Bilder/Punkt_Blau_2.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2",<br> &emsp; "Titel": "Test2" <br> } </pre> |
-| `Bereitstellungsraum` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | |
+| `Hinweis Global` | Wie Hinweis, nur ist der Text auch in kleineren Zoomstufen sichtbar. | ![](Bilder/Hinweis_Global.png) | <pre> { <br> &emsp; "Typ": "Hinweis Gelb",<br> &emsp; "Titel": "Hustädter Kirmes" <br> } </pre> |
+| `Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z])` | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | ![](Bilder/Punkt_Blau_2.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2" <br> } </pre> |
+| `Bereitstellungsraum` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | <pre> { <br> &emsp; "Typ": "Bereitstellungsraum" <br> } </pre> |
 | `Bereitstellungszone` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Bereitstellungszone.png) | <pre> { <br> &emsp; "Typ": "Bereitstellungszone",<br> &emsp; "Titel": "BR-Z W" <br> } </pre> |
 | `Einsatzleitung `| Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Einsatzleitung.png) | <pre> { <br> &emsp; "Typ": "Einsatzleitung",<br> &emsp; "Titel": "EL Fw" <br> } </pre> |
-| `Befehlsstelle` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | |
-| `Drohnengruppe` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | |
+| `Befehlsstelle` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | <pre> { <br> &emsp; "Typ": "Befehlsstelle" <br> } </pre> |
+| `Drohnengruppe` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | <pre> { <br> &emsp; "Typ": "Drohnengruppe" <br> } </pre> |
 | `Behandlungsplatz` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Behandlungsplatz.png) | <pre> { <br> &emsp; "Typ": "Behandlungsplatz",<br> &emsp; "Titel": "UHSt" <br> } </pre> |
-| `Hydrant` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | <pre> { <br> &emsp; "Typ": "Hydrant",<br> &emsp; "Titel": "DN 100" <br> } </pre> |
+| `Hydrant` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Hydrant.png) | <pre> { <br> &emsp; "Typ": "Hydrant",<br> &emsp; "Titel": "DN 100" <br> } </pre> |
 
 Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `Point`, als auch `MultiPoint`).
 
@@ -163,10 +163,8 @@ Im folgenden werden die Ausprägungen der einzelnen Linientypen und deren gedach
 
 | Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
 | --- | ----------- | ----------- | ----------- |
-| `Richtungspfeil` | Darstellung von Verlaufsrichtungen, z. B. eines Veranstaltungszuges. |  | <pre> { <br> &emsp; "Typ": "Richtungspfeil",<br> &emsp; "Titel": "Marathon" <br> } </pre> |
-| `Zaunanlage` | Darstellung von Zäunen. Sollte in Kombination mit Zugang oder Zufahrt verwendet werden um Zugangsmöglichkeiten darzustellen. |  | <pre> { <br> &emsp; "Typ": "Zaunanlage",<br> &emsp; "Titel": "Zaun" <br> } </pre> |
-
-
+| `Richtungspfeil (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Verlaufsrichtungen, z. B. eines Veranstaltungszuges. | ![](Bilder/Richtungspfeil_Lila.png) | <pre> { <br> &emsp; "Typ": "Richtungspfeil" <br> } </pre> |
+| `Zaunanlage` | Darstellung von Zäunen. Sollte in Kombination mit Zugang oder Zufahrt verwendet werden um Zugangsmöglichkeiten darzustellen. | ![](Bilder/Zaunanlage.png) | <pre> { <br> &emsp; "Typ": "Zaunanlage",<br> &emsp; "Titel": "Zaun" <br> } </pre> |
 
 Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `LineString` als auch `MultiLineString`).
 
@@ -176,20 +174,28 @@ Im folgenden werden die Ausprägungen der einzelnen Polygontypen und deren gedac
 
 | Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
 | --- | ----------- | ----------- | ----------- |
-| `Fläche (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Veranstaltungsflächen mit unterschiedlichen Farben. | ![](Bilder/Flaeche_Lila.png) | <pre> { <br> &emsp; "Typ": "Fläche Lila",<br> &emsp; "Titel": "Veranstaltungsgelände" <br> } </pre> |
-| `Aufbauten` | Darstellung von Veranstaltungsaufbauten, z. B. Hütten / Stände oder ähnliches. |  | <pre> { <br> &emsp; "Typ": "Aufbauten",<br> &emsp; "Titel": "100",<br> &emsp; "Gefahren": "Gas" <br> } </pre> |
-| `Aufstellfläche` | Vordefinierte Aufstellflächen für die Feuerwehr. | |  |
+| `Fläche (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Veranstaltungsflächen mit unterschiedlichen Farben. | ![](Bilder/Flaeche_Rot.png) | <pre> { <br> &emsp; "Typ": "Fläche Rot" <br> } </pre> |
+| `Aufbauten` | Darstellung von Veranstaltungsaufbauten, z. B. Hütten / Stände oder ähnliches. | ![](Bilder/Aufbauten.png) | <pre> { <br> &emsp; "Typ": "Aufbauten",<br> &emsp; "Titel": "100" <br> } </pre> |
+| `Aufstellfläche` | Vordefinierte Aufstellflächen für die Feuerwehr. | ![](Bilder/Aufstellflaeche.png) | <pre> { <br> &emsp; "Typ": "Aufstellfläche",<br> &emsp; "Titel": "LHF20" <br> } </pre> |
 | `(Feste\|Mobile\|Teilmobile) Sperre` | Sperre im Rahmen des Veranstaltungsschutzes. | ![](Bilder/Feste_Sperre.png) | <pre> { <br> &emsp; "Typ": "Feste Sperre",<br> &emsp; "Titel": "Sperre 4" <br> } </pre> |
-| `Indutainer` | Sperre im Rahmen des Veranstaltungsschutzes. |  | <pre> { <br> &emsp; "Typ": "Indutainer",<br> &emsp; "Titel": "Indutainer 27" <br> } </pre> |
-| `Zugang` | Zugangsmöglichkeiten zu einem Gebäude / Gelände. |  | <pre> { <br> &emsp; "Typ": "Zugang" <br> } </pre> |
+| `Indutainer` | Sperre im Rahmen des Veranstaltungsschutzes. | ![](Bilder/Indutainer.png) | <pre> { <br> &emsp; "Typ": "Indutainer",<br> &emsp; "Titel": "Indutainer 27" <br> } </pre> |
+| `Zugang` | Zugangsmöglichkeiten zu einem Gebäude / Gelände. | ![](Bilder/Zugang.png) | <pre> { <br> &emsp; "Typ": "Zugang" <br> } </pre> |
 | `Zufahrt` | Zufahrtsmöglichkeiten zu der Veranstaltung. | ![](Bilder/Zufahrt.png) | <pre> { <br> &emsp; "Typ": "Zufahrt" <br> } </pre> |
-
 
 Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `Polygon` als auch `MultiPolygon`).
 
+### Hilfspunkttypen
+
+Im folgenden werden die Ausprägungen der einzelnen Spezialfälle in Form von Hilfspunkttypen und deren gedachter Anwendungszweck definiert:
+
+| Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
+| --- | ----------- | ----------- | ----------- |
+| `Aufbauten` (Polygon) | Darstellung Gefahren bei Aufbauten. | ![](Bilder/Aufbauten_Gas.png) | <pre> { <br> &emsp; "Typ": "Aufbauten",<br> &emsp; "Titel": "27",<br> &emsp; "Gefahren": "Gas" <br> } </pre> |
+
+
 ### JSON schema
 
-Für die drei Ebenen existiert jeweils auch ein json.schema:
+Für die drei Ebenen existiert jeweils auch ein json.schema, das zur Validierung der Geodaten genutzt werden kann:
 
 - [Punktebene Schema](.schemas/Veranstaltungen_p.schema.json)
 - [Linienebene Schema](.schemas/Veranstaltungen_p.schema.json)
@@ -197,7 +203,7 @@ Für die drei Ebenen existiert jeweils auch ein json.schema:
 
 ## Stylemodell
 
-Die Darstellung der Daten ist applikationsspezifisch umzusetzen. 
+Die Darstellung der Daten ist applikationsspezifisch umzusetzen und **nicht Teil des GeoJSON Datenmodells**. Das Stylemodell muss nicht als Teil der Daten zur Verfügung gestellt werden.
 
 #### Punkttypen
 
