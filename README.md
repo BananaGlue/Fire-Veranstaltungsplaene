@@ -157,6 +157,18 @@ Es ist darauf zu achten, dass die Typen exakt wie angegeben definiert sind. Zus�
 > }
 > ```
 
+> [!CAUTION]
+> ❌ **Negativbeispiel: invalides JSON (ein Komma zu viel hinter "Typ" Property)**
+> ```json
+> {
+>   "type": "Feature",
+>   "properties": {
+>     "Typ": "Punkt Gelb X ",
+>   },
+>   "geometry": {...}
+> }
+> ```
+
 ### Linientypen
 
 Im folgenden werden die Ausprägungen der einzelnen Linientypen und deren gedachter Anwendungszweck definiert:
@@ -201,7 +213,7 @@ Für die drei Ebenen existiert jeweils auch ein json.schema, das zur Validierung
 - [Linienebene Schema](.schemas/Veranstaltungen_p.schema.json)
 - [Polygonebene Schema](.schemas/Veranstaltungen_p.schema.json)
 
-## Stylemodell
+## Stylemodell (nicht Teil der Daten)
 
 Die Darstellung der Daten ist applikationsspezifisch umzusetzen und **nicht Teil des GeoJSON Datenmodells**. Das Stylemodell muss nicht als Teil der Daten zur Verfügung gestellt werden.
 
