@@ -39,7 +39,11 @@
                 "description": "Definiert den Typ des Features, notwendig für die Darstellungskonfiguration (Style).",
                 "type": "string",
                 "enum": [
-                  "Richtungspfeil",
+                  "Richtungspfeil Rot",
+                  "Richtungspfeil Gelb",
+                  "Richtungspfeil Grün",
+                  "Richtungspfeil Blau",
+                  "Richtungspfeil Lila",
                   "Zaunanlage"
                 ]
               },

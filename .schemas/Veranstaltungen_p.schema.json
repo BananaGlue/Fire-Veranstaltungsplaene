@@ -41,6 +41,7 @@
                 "oneOf": [
                   { 
                     "enum": [
+                      "Hinweis Global",
                       "Hinweis Rot",
                       "Hinweis Gelb",
                       "Hinweis Grün",
@@ -51,7 +52,8 @@
                       "Einsatzleitung",
                       "Befehlsstelle",
                       "Drohnengruppe",
-                      "Behandlungsplatz"
+                      "Behandlungsplatz",
+                      "Hydrant"
                     ] 
                   },
                   { 

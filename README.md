@@ -59,6 +59,7 @@ Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedacht
 | Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
 | --- | ----------- | ----------- | ----------- |
 | `Hinweis (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Texthinweisen auf der Karte, nur sinnvoll mit Titel. | ![](Bilder/Hinweis_Gelb.png) | <pre> { <br> &emsp; "Typ": "Hinweis Gelb",<br> &emsp; "Titel": "BOS-WC" <br> } </pre> |
+| `Hinweis Global` | Wie Hinweis, nur ist der Text auch in kleineren Zoomstufen sichtbar. | ![](Bilder/Hinweis_Gelb.png) | <pre> { <br> &emsp; "Typ": "Hinweis Gelb",<br> &emsp; "Titel": "BOS-WC" <br> } </pre> |
 | `Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z])` | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | ![](Bilder/Punkt_Blau_2.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2",<br> &emsp; "Titel": "Test2" <br> } </pre> |
 | `Bereitstellungsraum` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | |
 | `Bereitstellungszone` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Bereitstellungszone.png) | <pre> { <br> &emsp; "Typ": "Bereitstellungszone",<br> &emsp; "Titel": "BR-Z W" <br> } </pre> |
@@ -66,6 +67,7 @@ Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedacht
 | `Befehlsstelle` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | |
 | `Drohnengruppe` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | |
 | `Behandlungsplatz` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Behandlungsplatz.png) | <pre> { <br> &emsp; "Typ": "Behandlungsplatz",<br> &emsp; "Titel": "UHSt" <br> } </pre> |
+| `Hydrant` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | <pre> { <br> &emsp; "Typ": "Hydrant",<br> &emsp; "Titel": "DN 100" <br> } </pre> |
 
 Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `Point`, als auch `MultiPoint`).
 
@@ -203,6 +205,7 @@ Im folgenden werden die zu verwendenden Füllfarben und Symbole der einzelnen Pu
 
 | Typ | Füllfarbe (hex) | Symbol |
 | --- | ----------- | ----------- | 
+| `Hinweis Global` | #33333366 | `circle.fill` |
 | `Hinweis Rot` | #FF000066 | `circle.fill` |
 | `Hinweis Gelb` | #FFFF0066 | `circle.fill` |
 | `Hinweis Grün` | #00FF0066 | `circle.fill` |
@@ -214,13 +217,19 @@ Im folgenden werden die zu verwendenden Füllfarben und Symbole der einzelnen Pu
 | `Punkt Blau ([1-50]\|[A-Z])` | #00aaff66 | `([1-50]\|[A-Z]).circle.fill` |
 | `Punkt Lila ([1-50]\|[A-Z])` | #eb34b166 | `([1-50]\|[A-Z]).circle.fill` |
 
+Die anderen hier nicht genannten Punkttypen sind mit den entsprechenden tatkischen Zeichen oder den Symbolen der DIN 14095 zu versehen.
+
 #### Linientypen
 
 Im folgenden werden die zu verwendenden Linienfarben und Dashpattern der einzelnen Linientypen definiert:
 
 | Typ | Linienfarbe (hex) | Dashpattern | Hinweis |
 | --- | ----------- | ----------- | ----------- | 
-| `Richtungspfeil` | #8F34EBEE | `- -` | Der Richtungspfeil ist in Verlaufsrichtung applikationsspezifisch hinzuzufügen. |
+| `Richtungspfeil Rot` | #FF0000EE | `- -` | Der Richtungspfeil ist in Verlaufsrichtung am Ende der Linie applikationsspezifisch hinzuzufügen. |
+| `Richtungspfeil Gelb` | #FFFF00EE | `- -` | Der Richtungspfeil ist in Verlaufsrichtung am Ende der Linie applikationsspezifisch hinzuzufügen. |
+| `Richtungspfeil Grün` | #00FF00EE | `- -` | Der Richtungspfeil ist in Verlaufsrichtung am Ende der Linie applikationsspezifisch hinzuzufügen. |
+| `Richtungspfeil Blau` | #00aaffEE | `- -` | Der Richtungspfeil ist in Verlaufsrichtung am Ende der Linie applikationsspezifisch hinzuzufügen. |
+| `Richtungspfeil Lila` | #8F34EBEE | `- -` | Der Richtungspfeil ist in Verlaufsrichtung am Ende der Linie applikationsspezifisch hinzuzufügen. |
 | `Zaunanlage` | #000000EE | `- . .` | |
 
 #### Polygontypen
