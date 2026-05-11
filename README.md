@@ -61,11 +61,11 @@ Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedacht
 | `Hinweis (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Texthinweisen auf der Karte, nur sinnvoll mit Titel. | ![](Bilder/Hinweis_Gelb.png) | <pre> { <br> &emsp; "Typ": "Hinweis Gelb",<br> &emsp; "Titel": "BOS-WC" <br> } </pre> |
 | `Hinweis Global` | Wie Hinweis, nur ist der Text auch in kleineren Zoomstufen sichtbar. | ![](Bilder/Hinweis_Global.png) | <pre> { <br> &emsp; "Typ": "Hinweis Gelb",<br> &emsp; "Titel": "Hustädter Kirmes" <br> } </pre> |
 | `Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z])` | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | ![](Bilder/Punkt_Blau_2.png) ![](Bilder/Punkt_Gelb_3.png) ![](Bilder/Punkt_Rot_X.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2" <br> } </pre> <pre> { <br> &emsp; "Typ": "Punkt Gelb 3",<br> &emsp; "Titel": "Test3" <br> } </pre> <pre> { <br> &emsp; "Typ": "Punkt Rot X",<br> &emsp; "Titel": "Metalbühne" <br> } </pre> |
-| `Bereitstellungsraum` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | <pre> { <br> &emsp; "Typ": "Bereitstellungsraum" <br> } </pre> |
+| `Bereitstellungsraum` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Bereitstellungsraum.png) | <pre> { <br> &emsp; "Typ": "Bereitstellungsraum",<br> &emsp; "Titel": "BR Süd" <br> } </pre> |
 | `Bereitstellungszone` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Bereitstellungszone.png) | <pre> { <br> &emsp; "Typ": "Bereitstellungszone",<br> &emsp; "Titel": "BR-Z W" <br> } </pre> |
 | `Einsatzleitung `| Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Einsatzleitung.png) | <pre> { <br> &emsp; "Typ": "Einsatzleitung",<br> &emsp; "Titel": "EL Fw" <br> } </pre> |
-| `Befehlsstelle` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | <pre> { <br> &emsp; "Typ": "Befehlsstelle" <br> } </pre> |
-| `Drohnengruppe` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. |  | <pre> { <br> &emsp; "Typ": "Drohnengruppe" <br> } </pre> |
+| `Befehlsstelle` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Befehlsstelle.png) | <pre> { <br> &emsp; "Typ": "Befehlsstelle" <br> } </pre> |
+| `Drohnengruppe` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Drohnengruppe.png) | <pre> { <br> &emsp; "Typ": "Drohnengruppe" <br> } </pre> |
 | `Behandlungsplatz` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Behandlungsplatz.png) | <pre> { <br> &emsp; "Typ": "Behandlungsplatz",<br> &emsp; "Titel": "UHSt" <br> } </pre> |
 | `Hydrant` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Hydrant.png) | <pre> { <br> &emsp; "Typ": "Hydrant",<br> &emsp; "Titel": "DN 100" <br> } </pre> |
 
