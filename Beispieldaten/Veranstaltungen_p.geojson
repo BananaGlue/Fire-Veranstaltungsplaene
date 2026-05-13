@@ -6,7 +6,7 @@
       "properties": {
         "Info": "Dieser Text wird angezeigt wenn man die Detailansicht öffnet.",
         "Typ": "Punkt Grün 1",
-        "Titel": "null,
+        "Titel": null,
         "Gefahren": null
       },
       "geometry": {

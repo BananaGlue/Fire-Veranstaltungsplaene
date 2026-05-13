@@ -4,9 +4,9 @@
     {
       "type": "Feature",
       "properties": {
-        "Info": "nur titel, kein icon",
+        "Info": "Dieser Text wird angezeigt wenn man die Detailansicht öffnet.",
         "Typ": "Fläche Rot",
-        "Titel": "765",
+        "Titel": "Ich bin eine rote Fläche :)",
         "Gefahren": null
       },
       "geometry": {
