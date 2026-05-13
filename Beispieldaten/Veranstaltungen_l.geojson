@@ -4,9 +4,9 @@
     {
       "type": "Feature",
       "properties": {
-        "Info": "nur titel, kein icon",
-        "Typ": "Richtungspfeil",
-        "Titel": "765",
+        "Info": "Dieser Text wird angezeigt wenn man die Detailansicht öffnet.",
+        "Typ": "Richtungspfeil Lila",
+        "Titel": null,
         "Gefahren": null
       },
       "geometry": {
