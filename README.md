@@ -59,7 +59,7 @@ Im folgenden werden die Ausprägungen der einzelnen Punkttypen und deren gedacht
 | Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
 | --- | ----------- | ----------- | ----------- |
 | `Hinweis (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Texthinweisen auf der Karte, nur sinnvoll mit Titel. | ![](Bilder/Hinweis_Gelb.png) | <pre> { <br> &emsp; "Typ": "Hinweis Gelb",<br> &emsp; "Titel": "BOS-WC" <br> } </pre> |
-| `Hinweis Global` | Wie Hinweis, nur ist der Text auch in kleineren Zoomstufen sichtbar. | ![](Bilder/Hinweis_Global.png) | <pre> { <br> &emsp; "Typ": "Hinweis Gelb",<br> &emsp; "Titel": "Hustädter Kirmes" <br> } </pre> |
+| `Hinweis Global` | Wie Hinweis, nur ist der Text auch in kleineren Zoomstufen sichtbar. | ![](Bilder/Hinweis_Global.png) | <pre> { <br> &emsp; "Typ": "Hinweis Global",<br> &emsp; "Titel": "Hustädter Kirmes" <br> } </pre> |
 | `Punkt (Rot\|Gelb\|Grün\|Blau\|Lila) ([1-50]\|[A-Z])` | Darstellung von durchnummerierten / durchbuchstabierten Punkten. Der Kontext ergibt sich aus weiteren Kartenelementen der Umgebung oder aus dem optionalen Titel. | ![](Bilder/Punkt_Blau_2.png) ![](Bilder/Punkt_Gelb_3.png) ![](Bilder/Punkt_Rot_X.png) | <pre> { <br> &emsp; "Typ": "Punkt Blau 2" <br> } </pre> <pre> { <br> &emsp; "Typ": "Punkt Gelb 3",<br> &emsp; "Titel": "Test3" <br> } </pre> <pre> { <br> &emsp; "Typ": "Punkt Rot X",<br> &emsp; "Titel": "Metalbühne" <br> } </pre> |
 | `Bereitstellungsraum` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Bereitstellungsraum.png) | <pre> { <br> &emsp; "Typ": "Bereitstellungsraum",<br> &emsp; "Titel": "BR Süd" <br> } </pre> |
 | `Bereitstellungszone` | Darstellung von vorgeplanten Orten mit taktischer Bedeutung. | ![](Bilder/Bereitstellungszone.png) | <pre> { <br> &emsp; "Typ": "Bereitstellungszone",<br> &emsp; "Titel": "BR-Z W" <br> } </pre> |
@@ -175,7 +175,7 @@ Im folgenden werden die Ausprägungen der einzelnen Linientypen und deren gedach
 
 | Typ | Angedachte Verwendung | Vorschau | Beispiel Feature Properties |
 | --- | ----------- | ----------- | ----------- |
-| `Richtungspfeil (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Verlaufsrichtungen, z. B. eines Veranstaltungszuges. | ![](Bilder/Richtungspfeil_Lila.png) | <pre> { <br> &emsp; "Typ": "Richtungspfeil" <br> } </pre> |
+| `Richtungspfeil (Rot\|Gelb\|Grün\|Blau\|Lila)` | Darstellung von Verlaufsrichtungen, z. B. eines Veranstaltungszuges. | ![](Bilder/Richtungspfeil_Lila.png) | <pre> { <br> &emsp; "Typ": "Richtungspfeil Lila" <br> } </pre> |
 | `Zaunanlage` | Darstellung von Zäunen. Sollte in Kombination mit Zugang oder Zufahrt verwendet werden um Zugangsmöglichkeiten darzustellen. | ![](Bilder/Zaunanlage.png) | <pre> { <br> &emsp; "Typ": "Zaunanlage",<br> &emsp; "Titel": "Zaun" <br> } </pre> |
 
 Bei der Geometrie sind jeweils sowohl die Einzelobjekte als auch die jeweiligen Multiobjekte möglich (z. B. `LineString` als auch `MultiLineString`).
